@@ -99,6 +99,8 @@ const Peer = window.Peer;
 
   dataConnection.on('data', data => {
     messages.textContent += `Remote: ${data}\n`;
+    console.log("緯度経度のデータはこっち？",data)
+
   });
 
   dataConnection.once('close', () => {
@@ -132,6 +134,7 @@ peer.on('connection', dataConnection => {
 
   dataConnection.on('data', data => {
     messages.textContent += `Remote: ${data}\n`;
+    console.log("緯度経度のデータはこれ",data)
   });
 
   dataConnection.once('close', () => {
