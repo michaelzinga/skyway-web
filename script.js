@@ -1,6 +1,6 @@
-const Peer = window.Peer;
-const Peer = require('skyway-js');
-const peer = new Peer({key: 'ebd5349b-10aa-4435-8de0-0b2f303e88d7'});
+// const Peer = window.Peer;
+// const Peer = require('skyway-js');
+// const peer = new Peer({key: 'ebd5349b-10aa-4435-8de0-0b2f303e88d7'});
 
 // import
 import Peer from 'skyway-js';
