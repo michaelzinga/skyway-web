@@ -4,7 +4,10 @@
 
 // import
 import Peer from 'skyway-js';
-const peer = new Peer({key: 'ebd5349b-10aa-4435-8de0-0b2f303e88d7'});
+const peer = new Peer({
+  key: 'ebd5349b-10aa-4435-8de0-0b2f303e88d7',
+  debug: 3
+});
 
 
 (async function main() {
@@ -38,6 +41,11 @@ const peer = new Peer({key: 'ebd5349b-10aa-4435-8de0-0b2f303e88d7'});
   localVideo.srcObject = localStream;
   localVideo.playsInline = true;
   await localVideo.play().catch(console.error);
+
+  peer.on('open', () => {
+    document.getElementById('my-id').textContent = peer.id;
+    console.log("あなたのpeerIDは",peer.id)
+});
 
   const peer = (window.peer = new Peer({
     key: window.__SKYWAY_KEY__,
