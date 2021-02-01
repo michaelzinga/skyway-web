@@ -129,6 +129,18 @@ const peer = new Peer({key: 'ebd5349b-10aa-4435-8de0-0b2f303e88d7'});
   }
 });
 
+function onOpen() {
+  console.log("着信しました！");
+}
+// 着信イベントを検知するイベントリスナを設置
+peer.on("open", onOpen);
+
+// イベントリスナを削除
+peer.off("open", onOpen);
+
+peer.connect("peerId");
+
+
 peer.once('open', id => (localId.textContent = id));
 
 // Register connected peer handler

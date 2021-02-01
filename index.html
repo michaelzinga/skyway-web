@@ -59,6 +59,7 @@
         });
             peer.on('open', () => {
           document.getElementById('my-id').textContent = peer.id;
+          console.log("peerIDが生成されました。みんな聞いてできたよー！",peer.id)
       });
             // 発信処理
       document.getElementById('make-call').onclick = () => {
