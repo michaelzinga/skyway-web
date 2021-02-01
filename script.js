@@ -9,7 +9,7 @@ const peer = new Peer({
   debug: 3
 });
 
-
+console.log("マルイチベーグル")
 (async function main() {
   const localVideo = document.getElementById('js-local-stream');
   const localText = document.getElementById('js-local-text');
@@ -23,6 +23,7 @@ const peer = new Peer({
   const messages = document.getElementById('js-messages');
   const meta = document.getElementById('js-meta');
   const sdkSrc = document.querySelector('script[src*=skyway]');
+  console.log("マル二ベーグル")
 
   meta.innerText = `
     UA: ${navigator.userAgent}
@@ -35,6 +36,7 @@ const peer = new Peer({
       video: true,
     })
     .catch(console.error);
+    console.log("マルサンベーグル")
 
   // Render local stream
   localVideo.muted = true;
@@ -51,6 +53,7 @@ const peer = new Peer({
     key: window.__SKYWAY_KEY__,
     debug: 3,
   }));
+  console.log("マルヨンベーグル")
 
   connectTrigger.addEventListener('click', () => {
     // Note that you need to ensure the peer has connected to signaling server
