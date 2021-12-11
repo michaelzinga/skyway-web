@@ -38,9 +38,11 @@ const Peer = window.Peer;
   }));
 
   connectTrigger.addEventListener("click", () => {
+    console.log("テストテキストです");
     // Note that you need to ensure the peer has connected to signaling server
     // before using methods of peer instance.
     if (!peer.open) {
+      console.log("テストテキスト");
       return;
     }
 
@@ -73,9 +75,11 @@ const Peer = window.Peer;
 
     // Register callee handler
     peer.on("call", (mediaConnection) => {
+      console.log("メディア、コースイベント開始");
       mediaConnection.answer(localStream);
 
       mediaConnection.on("stream", async (stream) => {
+        console.log("メディア開始");
         // Render remote stream for callee
         remoteVideo.srcObject = stream;
         remoteVideo.playsInline = true;
